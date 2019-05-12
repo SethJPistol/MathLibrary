@@ -97,20 +97,36 @@ float Vector2::dot(const Vector2& vToDot)
 
 float Vector2::magnitude()
 {
+	//Square x and y, add them, then square root
 	return sqrt((x * x) + (y * y));
 }
 
 Vector2 Vector2::normalise()
 {
-	float newx = x / magnitude();
-	float newy = y / magnitude();
-	Vector2 newV(newx, newy);
+	//Divide x and y by the magnitude
+	Vector2 newV(x / magnitude(), y / magnitude());
 	return newV;
 }
 
-float Vector2::scalarRes(const Vector2& vDirecOf)
+float Vector2::scalarRes(Vector2& vDirecOf)
 {
-	float newx = x * vDirecOf.normalise();
+	//Find the unit vector in direction of the parameter
+	Vector2 vUnitVec = vDirecOf.normalise();
+	//Return the dot product of the vector and parameter unit vector, a*b^
+	return dot(vUnitVec);
+}
+
+Vector2 Vector2::vectorRes(Vector2& vDirecOf)
+{
+	//Multiply the parameter unit vector by the scalar resolute, (a*b^)*b^
+	return scalarRes(vDirecOf) * vDirecOf.normalise();
+}
+
+Vector2 Vector2::perpRes(Vector2& vDirecOf)
+{
+	//Subtract the vector resolute from the vector, a-(a*b^)*b^
+	Vector2 newV = *this - vectorRes(vDirecOf);
+	return newV;
 }
 
 float Vector2::operator[](int nIndex)

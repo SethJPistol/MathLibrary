@@ -15,18 +15,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\Seth%27s Work\Maths for Games\Maths for Games Assignments\Math Library\Math Library\Source.cpp">
+    <ClCompile Include="..\..\..\..\..\..\..\Seth%27s Work\Maths for Games\Maths for Games Assignments\Math Library\trunk\Math Library\Math Library\Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\Seth%27s Work\Maths for Games\Maths for Games Assignments\Math Library\Math Library\Vector2.cpp">
+    <ClCompile Include="..\..\..\..\..\..\..\Seth%27s Work\Maths for Games\Maths for Games Assignments\Math Library\trunk\Math Library\Math Library\Vector2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\Seth%27s Work\Maths for Games\Maths for Games Assignments\Math Library\trunk\Math Library\Math Library\Vector3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\Seth%27s Work\Maths for Games\Maths for Games Assignments\Math Library\Math Library\Vector2.h">
+    <ClInclude Include="..\..\..\..\..\..\..\Seth%27s Work\Maths for Games\Maths for Games Assignments\Math Library\trunk\Math Library\Math Library\Vector2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\Seth%27s Work\Maths for Games\Maths for Games Assignments\Math Library\Math Library\Vector3.h">
+    <ClInclude Include="..\..\..\..\..\..\..\Seth%27s Work\Maths for Games\Maths for Games Assignments\Math Library\trunk\Math Library\Math Library\Vector3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

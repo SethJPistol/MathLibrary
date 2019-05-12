@@ -18,6 +18,15 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\..\..\Seth%27s Work\Maths for Games\Maths for Games Assignments\Math Library\trunk\Math Library\Math Library\Source.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\..\Seth%27s Work\Maths for Games\Maths for Games Assignments\Math Library\trunk\Math Library\Math Library\Vector2.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\..\Seth%27s Work\Maths for Games\Maths for Games Assignments\Math Library\trunk\Math Library\Math Library\Vector3.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\..\..\Seth%27s Work\Maths for Games\Maths for Games Assignments\Math Library\trunk\Math Library\Math Library\Vector2.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\Seth%27s Work\Maths for Games\Maths for Games Assignments\Math Library\trunk\Math Library\Math Library\Vector3.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{6E84EC51-D108-4455-AB60-514DC2C00D14}</ProjectGuid>
@@ -114,14 +123,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\Seth%27s Work\Maths for Games\Maths for Games Assignments\Math Library\Math Library\Source.cpp" />
-    <ClCompile Include="..\..\..\..\..\Seth%27s Work\Maths for Games\Maths for Games Assignments\Math Library\Math Library\Vector2.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\Seth%27s Work\Maths for Games\Maths for Games Assignments\Math Library\Math Library\Vector2.h" />
-    <ClInclude Include="..\..\..\..\..\Seth%27s Work\Maths for Games\Maths for Games Assignments\Math Library\Math Library\Vector3.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
