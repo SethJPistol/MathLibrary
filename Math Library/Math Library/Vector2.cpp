@@ -76,6 +76,8 @@ void Vector2::operator*=(const float fScalar)
 
 Vector2 Vector2::operator/(const float fScalar)
 {
+	assert(fScalar != 0);
+
 	float newx = x / fScalar;
 	float newy = y / fScalar;
 	Vector2 newV(newx, newy);
@@ -84,8 +86,20 @@ Vector2 Vector2::operator/(const float fScalar)
 
 void Vector2::operator/=(const float fScalar)
 {
+	assert(fScalar != 0);
+
 	x = x / fScalar;
 	y = y / fScalar;
+}
+
+bool Vector2::operator==(const Vector2& vToCompare)
+{
+	return x == vToCompare.x && y == vToCompare.y;
+}
+
+bool Vector2::operator!=(const Vector2& vToCompare)
+{
+	return x != vToCompare.x || y != vToCompare.y;
 }
 
 float Vector2::dot(const Vector2& vToDot)
@@ -101,17 +115,28 @@ float Vector2::magnitude()
 	return sqrt((x * x) + (y * y));
 }
 
-Vector2 Vector2::normalise()
+void Vector2::normalise()
 {
+	float mag = magnitude();
+	assert(mag != 0);
 	//Divide x and y by the magnitude
-	Vector2 newV(x / magnitude(), y / magnitude());
+	x = x / mag;
+	y = y / mag;
+}
+
+Vector2 Vector2::unitVector()
+{
+	float mag = magnitude();
+	assert(mag != 0);
+	//Divide x and y by the magnitude
+	Vector2 newV(x / mag, y / mag);
 	return newV;
 }
 
 float Vector2::scalarRes(Vector2& vDirecOf)
 {
 	//Find the unit vector in direction of the parameter
-	Vector2 vUnitVec = vDirecOf.normalise();
+	Vector2 vUnitVec = vDirecOf.unitVector();
 	//Return the dot product of the vector and parameter unit vector, a*b^
 	return dot(vUnitVec);
 }
@@ -119,7 +144,7 @@ float Vector2::scalarRes(Vector2& vDirecOf)
 Vector2 Vector2::vectorRes(Vector2& vDirecOf)
 {
 	//Multiply the parameter unit vector by the scalar resolute, (a*b^)*b^
-	return scalarRes(vDirecOf) * vDirecOf.normalise();
+	return scalarRes(vDirecOf) * vDirecOf.unitVector();
 }
 
 Vector2 Vector2::perpRes(Vector2& vDirecOf)
@@ -129,7 +154,7 @@ Vector2 Vector2::perpRes(Vector2& vDirecOf)
 	return newV;
 }
 
-float Vector2::operator[](int nIndex)
+float& Vector2::operator[](int nIndex)
 {
 	switch (nIndex)
 	{
@@ -137,4 +162,9 @@ float Vector2::operator[](int nIndex)
 	case 1: return y;
 	default: assert(0);
 	}
+}
+
+Vector2::operator float*()
+{
+	return &x;
 }
