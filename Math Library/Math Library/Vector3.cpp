@@ -132,7 +132,7 @@ Vector3 Vector3::cross(const Vector3& vToCross)
 float Vector3::magnitude()
 {
 	//Square x, y, and z, add them, then square root
-	return sqrt((x * x) + (y * y) + (z * z));
+	return sqrtf((x * x) + (y * y) + (z * z));
 }
 
 void Vector3::normalise()

@@ -112,7 +112,7 @@ float Vector2::dot(const Vector2& vToDot)
 float Vector2::magnitude()
 {
 	//Square x and y, add them, then square root
-	return sqrt((x * x) + (y * y));
+	return sqrtf((x * x) + (y * y));
 }
 
 void Vector2::normalise()

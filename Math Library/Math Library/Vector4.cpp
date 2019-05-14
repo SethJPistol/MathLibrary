@@ -30,10 +30,11 @@ Vector4::~Vector4()
 
 Vector4 Vector4::operator+(const Vector4& vToAdd)
 {
-	float newx = x + vToAdd.x;
-	float newy = y + vToAdd.y;
-	float newz = z + vToAdd.z;
-	Vector4 newV(newx, newy, newz);
+	float newX = x + vToAdd.x;
+	float newY = y + vToAdd.y;
+	float newZ = z + vToAdd.z;
+	float newW = w + vToAdd.w;
+	Vector4 newV(newX, newY, newZ, newW);
 	return newV;
 }
 
@@ -42,14 +43,16 @@ void Vector4::operator+=(const Vector4& vToAdd)
 	x = x + vToAdd.x;
 	y = y + vToAdd.y;
 	z = z + vToAdd.z;
+	w = w + vToAdd.w;
 }
 
 Vector4 Vector4::operator-(const Vector4& vToSub)
 {
-	float newx = x - vToSub.x;
-	float newy = y - vToSub.y;
-	float newz = z - vToSub.z;
-	Vector4 newV(newx, newy, newz);
+	float newX = x - vToSub.x;
+	float newY = y - vToSub.y;
+	float newZ = z - vToSub.z;
+	float newW = w - vToSub.w;
+	Vector4 newV(newX, newY, newZ, newW);
 	return newV;
 }
 
@@ -58,23 +61,26 @@ void Vector4::operator-=(const Vector4& vToSub)
 	x = x - vToSub.x;
 	y = y - vToSub.y;
 	z = z - vToSub.z;
+	w = w - vToSub.w;
 }
 
 Vector4 Vector4::operator*(const float fScalar)
 {
-	float newx = x * fScalar;
-	float newy = y * fScalar;
-	float newz = z * fScalar;
-	Vector4 newV(newx, newy, newz);
+	float newX = x * fScalar;
+	float newY = y * fScalar;
+	float newZ = z * fScalar;
+	float newW = w * fScalar;
+	Vector4 newV(newX, newY, newZ, newW);
 	return newV;
 }
 
 Vector4 operator*(const float& fScalar, const Vector4& vector)
 {
-	float newx = vector.x * fScalar;
-	float newy = vector.y * fScalar;
-	float newz = vector.z * fScalar;
-	Vector4 newV(newx, newy, newz);
+	float newX = vector.x * fScalar;
+	float newY = vector.y * fScalar;
+	float newZ = vector.z * fScalar;
+	float newW = vector.w * fScalar;
+	Vector4 newV(newX, newY, newZ, newW);
 	return newV;
 }
 
@@ -83,15 +89,17 @@ void Vector4::operator*=(const float fScalar)
 	x = x * fScalar;
 	y = y * fScalar;
 	z = z * fScalar;
+	w = w * fScalar;
 }
 
 Vector4 Vector4::operator/(const float fScalar)
 {
 	assert(fScalar != 0);
-	float newx = x / fScalar;
-	float newy = y / fScalar;
-	float newz = z / fScalar;
-	Vector4 newV(newx, newy, newz);
+	float newX = x / fScalar;
+	float newY = y / fScalar;
+	float newZ = z / fScalar;
+	float newW = w / fScalar;
+	Vector4 newV(newX, newY, newZ, newW);
 	return newV;
 }
 
@@ -101,6 +109,7 @@ void Vector4::operator/=(const float fScalar)
 	x = x / fScalar;
 	y = y / fScalar;
 	z = z / fScalar;
+	w = w / fScalar;
 }
 
 bool Vector4::operator==(const Vector4& vToCompare)
@@ -115,10 +124,10 @@ bool Vector4::operator!=(const Vector4& vToCompare)
 
 float Vector4::dot(const Vector4& vToDot)
 {
-	float newx = x * vToDot.x;
-	float newy = y * vToDot.y;
-	float newz = z * vToDot.z;
-	return newx + newy + newz;
+	float newX = x * vToDot.x;
+	float newY = y * vToDot.y;
+	float newZ = z * vToDot.z;
+	return newX + newY + newZ;
 }
 
 Vector4 Vector4::cross(const Vector4& vToCross)
@@ -133,7 +142,7 @@ Vector4 Vector4::cross(const Vector4& vToCross)
 float Vector4::magnitude()
 {
 	//Square x, y, and z, add them, then square root
-	return sqrt((x * x) + (y * y) + (z * z));
+	return sqrtf((x * x) + (y * y) + (z * z));
 }
 
 void Vector4::normalise()

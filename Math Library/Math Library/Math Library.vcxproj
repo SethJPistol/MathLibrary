@@ -20,6 +20,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\..\..\Seth%27s Work\Maths for Games\Maths for Games Assignments\Math Library\trunk\Math Library\Math Library\Binary.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\..\Seth%27s Work\Maths for Games\Maths for Games Assignments\Math Library\trunk\Math Library\Math Library\Matrix3.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\..\Seth%27s Work\Maths for Games\Maths for Games Assignments\Math Library\trunk\Math Library\Math Library\Matrix4.cpp" />
     <ClCompile Include="..\..\..\..\..\..\..\Seth%27s Work\Maths for Games\Maths for Games Assignments\Math Library\trunk\Math Library\Math Library\Source.cpp" />
     <ClCompile Include="..\..\..\..\..\..\..\Seth%27s Work\Maths for Games\Maths for Games Assignments\Math Library\trunk\Math Library\Math Library\Vector2.cpp" />
     <ClCompile Include="..\..\..\..\..\..\..\Seth%27s Work\Maths for Games\Maths for Games Assignments\Math Library\trunk\Math Library\Math Library\Vector3.cpp" />
@@ -27,6 +29,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\..\..\Seth%27s Work\Maths for Games\Maths for Games Assignments\Math Library\trunk\Math Library\Math Library\Binary.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\Seth%27s Work\Maths for Games\Maths for Games Assignments\Math Library\trunk\Math Library\Math Library\Matrix3.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\Seth%27s Work\Maths for Games\Maths for Games Assignments\Math Library\trunk\Math Library\Math Library\Matrix4.h" />
     <ClInclude Include="..\..\..\..\..\..\..\Seth%27s Work\Maths for Games\Maths for Games Assignments\Math Library\trunk\Math Library\Math Library\Vector2.h" />
     <ClInclude Include="..\..\..\..\..\..\..\Seth%27s Work\Maths for Games\Maths for Games Assignments\Math Library\trunk\Math Library\Math Library\Vector3.h" />
     <ClInclude Include="..\..\..\..\..\..\..\Seth%27s Work\Maths for Games\Maths for Games Assignments\Math Library\trunk\Math Library\Math Library\Vector4.h" />
