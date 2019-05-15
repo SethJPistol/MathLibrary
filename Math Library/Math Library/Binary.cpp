@@ -9,7 +9,7 @@ int binToDec(const char* binaryString)
 	{
 		int power = pow(2, (nDigits - i));		//Calculate the significance of the current digit
 		int binChar = binaryString[i - 1] - 48;	//Find which char is at the current digit (48 or 49) and convert it to binary (0 or 1)
-		int toAdd = binChar * power;			//Calculate the decimal amount of the current digit
+		int toAdd = binChar * power;			//Calculate the decimal amount represented by the current binary digit
 		result += toAdd;						//Add the decimal amount to the total
 	}
 	return result;
@@ -17,8 +17,7 @@ int binToDec(const char* binaryString)
 
 void decToBin(char* binaryString, int len, int value)
 {
-
-
+	
 }
 
 void setBit(char& bitfield, char bit, char value)
