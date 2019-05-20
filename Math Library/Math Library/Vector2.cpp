@@ -161,6 +161,7 @@ float& Vector2::operator[](int nIndex)
 	case 0: return x;
 	case 1: return y;
 	default: assert(0);
+		return x; //Arbitrary return to please the compiler
 	}
 }
 

@@ -8,6 +8,9 @@ using namespace std;
 
 int main()
 {
+	//Checks for memory leaks
+	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+
 	Vector2 a(2.0f, 1.0f);
 	Vector2 b(1.0f, 0.0f);
 
@@ -38,6 +41,15 @@ int main()
 	const char* bin = "10010101100000";
 	cout << binToDec(bin) << endl;
 
+	char binString[33];
+	decToBin(binString, 33, binToDec(bin));
+	cout << binString << endl;
+
+
+	char bitfield = 0;
+	setBit(bitfield, 3, true);
+	bool bIsBitTrue = checkBit(bitfield, 3);
+	cout << bIsBitTrue << endl;
 
 
 	system("pause");

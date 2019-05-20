@@ -183,6 +183,7 @@ float& Vector3::operator[](int nIndex)
 	case 1: return y;
 	case 2: return z;
 	default: assert(0);
+		return x; //Arbitrary return to please the compiler
 	}
 }
 

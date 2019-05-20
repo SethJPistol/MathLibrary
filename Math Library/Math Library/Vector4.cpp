@@ -194,6 +194,7 @@ float& Vector4::operator[](int nIndex)
 	case 2: return z;
 	case 3: return w;
 	default: assert(0);
+		return x; //Arbitrary return to please the compiler
 	}
 }
 
