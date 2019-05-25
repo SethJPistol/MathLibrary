@@ -59,6 +59,24 @@ Vector3 Matrix3::operator*(const Vector3& vToMult)
 	return newV;
 }
 
+Matrix3 Matrix3::operator*(const float fScalar)
+{
+	Matrix3 newM;
+	for (int i = 0; i < 9; ++i)
+	{
+		newM.m[i] = m[i] * fScalar;
+	}
+	return newM;
+}
+
+void Matrix3::operator*=(const float fScalar)
+{
+	for (int i = 0; i < 9; ++i)
+	{
+		m[i] *= fScalar;
+	}
+}
+
 Vector3& Matrix3::operator[](int nIndex)
 {
 	//Find the address of the column, cast it to a vector3 pointer,
@@ -69,6 +87,72 @@ Vector3& Matrix3::operator[](int nIndex)
 Matrix3::operator float*()
 {
 	return m;
+}
+
+Matrix3 Matrix3::Transpose()
+{
+	return Matrix3(m[0], m[3], m[6], 
+					m[1], m[4], m[7], 
+					m[2], m[5], m[8]);
+}
+
+void Matrix3::TransposeCurrent()
+{
+	float temp = m[1];
+	m[1] = m[3];
+	m[3] = temp;
+
+	temp = m[2];
+	m[2] = m[6];
+	m[6] = temp;
+
+	temp = m[5];
+	m[5] = m[7];
+	m[7] = temp;
+}
+
+Matrix3 Matrix3::Inverse()
+{
+	Matrix3 inv;
+
+	//	0, 3, 6
+	//	1, 4, 7
+	//	2, 5, 8
+
+	//Calculate the matrix of minors
+	inv.m[0] = ((m[4] * m[8]) - (m[7] * m[5]));	inv.m[1] = ((m[3] * m[8]) - (m[6] * m[5]));	inv.m[2] = ((m[3] * m[7]) - (m[6] * m[4]));
+	inv.m[3] = ((m[1] * m[8]) - (m[7] * m[2]));	inv.m[4] = ((m[0] * m[8]) - (m[6] * m[2]));	inv.m[5] = ((m[0] * m[7]) - (m[6] * m[1]));
+	inv.m[6] = ((m[1] * m[5]) - (m[4] * m[2]));	inv.m[7] = ((m[0] * m[5]) - (m[3] * m[2]));	inv.m[8] = ((m[0] * m[4]) - (m[3] * m[1]));
+
+	//Calculate the matrix of cofactors
+	inv.m[1] *= -1;
+	inv.m[3] *= -1;
+	inv.m[5] *= -1;
+	inv.m[7] *= -1;
+
+	//Calculate the determinant
+	float det = (m[0] * inv.m[0]) + (m[3] * inv.m[3]) + (m[6] * inv.m[6]);
+
+	//Calculate the adjugate of the matrix
+	inv.TransposeCurrent();
+
+	//Multiply the adjugate and the determinant reciprocal
+	inv *= (1 / det);
+
+	return inv;
+}
+
+void Matrix3::Reset()
+{
+	m[0] = 1;
+	m[1] = 0;
+	m[2] = 0;
+	m[3] = 0;
+	m[4] = 1;
+	m[5] = 0;
+	m[6] = 0;
+	m[7] = 0;
+	m[8] = 1;
 }
 
 void Matrix3::setRotateX(float radians)

@@ -83,6 +83,24 @@ Vector4 Matrix4::operator*(const Vector4& vToMult)
 	return newV;
 }
 
+Matrix4 Matrix4::operator*(const float fScalar)
+{
+	Matrix4 newM;
+	for (int i = 0; i < 16; ++i)
+	{
+		newM.m[i] = m[i] * fScalar;
+	}
+	return newM;
+}
+
+void Matrix4::operator*=(const float fScalar)
+{
+	for (int i = 0; i < 16; ++i)
+	{
+		m[i] *= fScalar;
+	}
+}
+
 Vector4& Matrix4::operator[](int nIndex)
 {
 	//Find the address of the column, cast it to a Vector4 pointer,
@@ -93,6 +111,61 @@ Vector4& Matrix4::operator[](int nIndex)
 Matrix4::operator float*()
 {
 	return m;
+}
+
+Matrix4 Matrix4::Transpose()
+{
+	return Matrix4(m[0], m[4], m[8], m[12], 
+					m[1], m[5], m[9], m[13], 
+					m[2], m[6], m[10], m[14],
+					m[3], m[7], m[11], m[15]);
+}
+
+void Matrix4::TransposeCurrent()
+{
+	float temp = m[1];
+	m[1] = m[4];
+	m[4] = temp;
+
+	temp = m[2];
+	m[2] = m[8];
+	m[8] = temp;
+
+	temp = m[3];
+	m[3] = m[12];
+	m[12] = temp;
+
+	temp = m[6];
+	m[6] = m[9];
+	m[9] = temp;
+
+	temp = m[7];
+	m[7] = m[13];
+	m[13] = temp;
+
+	temp = m[11];
+	m[11] = m[14];
+	m[14] = temp;
+}
+
+void Matrix4::Reset()
+{
+	m[0] = 1;
+	m[1] = 0;
+	m[2] = 0;
+	m[3] = 0;
+	m[4] = 0;
+	m[5] = 1;
+	m[6] = 0;
+	m[7] = 0;
+	m[8] = 0;
+	m[9] = 0;
+	m[10] = 1;
+	m[11] = 0;
+	m[12] = 0;
+	m[13] = 0;
+	m[14] = 0;
+	m[15] = 1;
 }
 
 void Matrix4::setRotateX(float radians)
