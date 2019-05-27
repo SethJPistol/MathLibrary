@@ -53,6 +53,7 @@ int main()
 
 	Matrix3 myTest(3, 0, 2, 2, 0, -2, 0, 1, 1);
 
+	cout << "Original Matrix:" << endl;
 	for (int i = 0; i < 3; ++i)
 	{
 		for (int j = 0; j < 3; ++j)
@@ -65,8 +66,20 @@ int main()
 
 	Matrix3 myInvTest = myTest.Inverse();
 
+	cout << "Inverse Matrix:" << endl;
+	for (int i = 0; i < 3; ++i)
+	{
+		for (int j = 0; j < 3; ++j)
+		{
+			cout << myInvTest[i][j] << " ";
+		}
+		cout << endl;
+	}
+	cout << endl;
+
 	Matrix3 myIdentTest = myTest * myInvTest;
 
+	cout << "Original Matrix * Inverse Matrix:" << endl;
 	for (int i = 0; i < 3; ++i)
 	{
 		for (int j = 0; j < 3; ++j)
@@ -75,6 +88,7 @@ int main()
 		}
 		cout << endl;
 	}
+	cout << endl;
 
 
 	system("pause");

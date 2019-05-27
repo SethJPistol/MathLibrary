@@ -132,6 +132,7 @@ Matrix3 Matrix3::Inverse()
 
 	//Calculate the determinant
 	float det = (m[0] * inv.m[0]) + (m[3] * inv.m[3]) + (m[6] * inv.m[6]);
+	assert(det && "Matrix determinant is 0");
 
 	//Calculate the adjugate of the matrix
 	inv.TransposeCurrent();
