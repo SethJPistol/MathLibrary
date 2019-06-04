@@ -30,12 +30,12 @@ Matrix3::Matrix3(float m0, float m1, float m2,
 }
 Matrix3::~Matrix3()
 {
-
 }
 
 Matrix3 Matrix3::operator*(const Matrix3& mToMult)
 {
 	Matrix3 newM;
+
 	newM.m[0] = (m[0] * mToMult.m[0]) + (m[3] * mToMult.m[1]) + (m[6] * mToMult.m[2]);
 	newM.m[1] = (m[1] * mToMult.m[0]) + (m[4] * mToMult.m[1]) + (m[7] * mToMult.m[2]);
 	newM.m[2] = (m[2] * mToMult.m[0]) + (m[5] * mToMult.m[1]) + (m[8] * mToMult.m[2]);
@@ -47,6 +47,7 @@ Matrix3 Matrix3::operator*(const Matrix3& mToMult)
 	newM.m[6] = (m[0] * mToMult.m[6]) + (m[3] * mToMult.m[7]) + (m[6] * mToMult.m[8]);
 	newM.m[7] = (m[1] * mToMult.m[6]) + (m[4] * mToMult.m[7]) + (m[7] * mToMult.m[8]);
 	newM.m[8] = (m[2] * mToMult.m[6]) + (m[5] * mToMult.m[7]) + (m[8] * mToMult.m[8]);
+	
 	return newM;
 }
 
@@ -75,6 +76,19 @@ void Matrix3::operator*=(const float fScalar)
 	{
 		m[i] *= fScalar;
 	}
+}
+
+void Matrix3::operator=(const Matrix3& mToEqual)
+{
+	m[0] = mToEqual.m[0];
+	m[1] = mToEqual.m[1];
+	m[2] = mToEqual.m[2];
+	m[3] = mToEqual.m[3];
+	m[4] = mToEqual.m[4];
+	m[5] = mToEqual.m[5];
+	m[6] = mToEqual.m[6];
+	m[7] = mToEqual.m[7];
+	m[8] = mToEqual.m[8];
 }
 
 Vector3& Matrix3::operator[](int nIndex)
@@ -192,6 +206,14 @@ void Matrix3::setRotateZ(float radians)
 	m[4] = cosValue;
 }
 
+void Matrix3::addRotateZ(float radians)
+{
+	Matrix3 m;				//Makes a temporary matrix
+	m.setRotateZ(radians);	//Rotate the temporary matrix
+
+	*this = *this * m;		//Multiply them together
+}
+
 void Matrix3::setPosition(float x, float y)
 {
 	m[6] = x;
@@ -221,4 +243,10 @@ void Matrix3::setScale(float x, float y)
 void Matrix3::setScale(Vector2 scale)
 {
 	setScale(scale.x, scale.y);
+}
+
+Vector2 Matrix3::getScale()
+{
+	Vector2 scale(m[0], m[4]);
+	return scale;
 }

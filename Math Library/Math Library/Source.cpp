@@ -38,7 +38,7 @@ int main()
 	cout << myVectorResolute.x << " " << myVectorResolute.y << " " << myVectorResolute.z << endl;*/
 
 	
-	/*const char* bin = "10010101100000";
+	const char* bin = "101010";
 	cout << binToDec(bin) << endl;
 
 	char binString[33];
@@ -49,9 +49,9 @@ int main()
 	char bitfield = 0;
 	setBit(bitfield, 3, true);
 	bool bIsBitTrue = checkBit(bitfield, 3);
-	cout << bIsBitTrue << endl;*/
+	cout << bIsBitTrue << endl;
 
-	Matrix3 myTest(3, 0, 2, 2, 0, -2, 0, 1, 1);
+	/*Matrix3 myTest(3, 0, 2, 2, 0, -2, 0, 1, 1);
 
 	cout << "Original Matrix:" << endl;
 	for (int i = 0; i < 3; ++i)
@@ -88,7 +88,7 @@ int main()
 		}
 		cout << endl;
 	}
-	cout << endl;
+	cout << endl;*/
 
 
 	system("pause");

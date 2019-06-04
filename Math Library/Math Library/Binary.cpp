@@ -5,7 +5,7 @@ int binToDec(const char* binaryString)
 	int nBits = strlen(binaryString);			//Store how many binary digits in the binary string
 	int nResult = 0;
 
-	for (int i = 0; i < nBits; ++i)
+	for (int i = 0; i < nBits; ++i)				//Until the end of the string
 	{
 		if (binaryString[nBits - i - 1] == 49)	//If the char at the index is 1
 		{

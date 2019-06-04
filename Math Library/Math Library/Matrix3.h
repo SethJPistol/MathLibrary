@@ -21,6 +21,7 @@ public:
 	Vector3 operator*(const Vector3& vToMult);	//Multiplies the matrix by a vector3 and returns the vector result
 	Matrix3 operator*(const float fScalar);		//Multiplies all matrix elements by a scalar and returns the matrix result
 	void operator*=(const float fScalar);		//Multiplies all matrix elements by a scalar
+	void operator=(const Matrix3& mToEqual);
 
 	Vector3& operator[](int nIndex);			//Returns a vector3 for the matrix column corresponding with the index (0-2)
 	operator float*();							//Casts the matrix to a float pointer, which can be used like an array
@@ -33,6 +34,7 @@ public:
 	void setRotateX(float radians);				//Rotates the matrix around the x axis, resets any rotation/scale
 	void setRotateY(float radians);				//Rotates the matrix around the y axis, resets any rotation/scale
 	void setRotateZ(float radians);				//Rotates the matrix around the z axis, resets any rotation/scale
+	void addRotateZ(float radians);
 
 	void setPosition(float x, float y);			//Uses two floats to set the position
 	void setPosition(Vector2 pos);				//Uses a vector2 to set the position
@@ -40,4 +42,5 @@ public:
 
 	void setScale(float x, float y);			//Uses two floats to set the scale, resets any rotation/scale
 	void setScale(Vector2 scale);				//Uses a vector2 to set the scale, resets any rotation/scale
+	Vector2 getScale();
 };
