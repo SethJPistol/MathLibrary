@@ -42,10 +42,6 @@ public:
 	float& operator[](int nIndex);				//Overload that returns x at index [0] and y at index [1]
 	operator float*();							//Overload to cast a vector to a float pointer
 	//---------------------------------------------------------------------------------------
-
-private:
-
-
 };
 
 //Overload to multiply a vector by a scalar (in reverse order) and return a new vector
