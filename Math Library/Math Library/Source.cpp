@@ -1,7 +1,9 @@
 #include <iostream>
 #include "Vector2.h"
 #include "Vector3.h"
+#include "Vector4.h"
 #include "Matrix3.h"
+#include "Matrix4.h"
 #include "Binary.h"
 
 using namespace std;
@@ -11,49 +13,55 @@ int main()
 	//Checks for memory leaks
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 
+	//Vector2 examples
 	Vector2 a(2.0f, 1.0f);
 	Vector2 b(1.0f, 0.0f);
 
 	float dotProduct = a.dot(b);
-	Vector2 myUnitVector = a.unitVector();
+	Vector2 aUnitVector = a.unitVector();
 	float myScalarResolute = a.scalarRes(b);
 	Vector2 myVectorResolute = a.vectorRes(b);
 	Vector2 myPerpendicularResolute = a.perpRes(b);
-
-	/*float* p = a;
-	cout << p[0] << endl;
-	p[0] = 4;
-	cout << p[0] << endl;*/
 	
-	//cout << myUnitVector.magnitude() << endl;
-	//cout << myPerpendicularResolute.x << " " << myPerpendicularResolute.y << endl;
+	cout << "-Vector2 examples-" << endl;
+	cout << "Vector a: " << a.x << ", " << a.y << endl;
+	cout << "Magnitude of the unit vector: " << aUnitVector.magnitude() << endl;
 
 
+	//Vector3 examples
+	Vector3 c(2.0f, 1.0f, 3.0f);
 
-	/*Vector3 a(1.0f, 3.0f, 0.0f);
-	Vector3 b(1.0f, -4.0f, 1.0f);
+	Vector3 cUnitVector = c.unitVector();
 
-	Vector3 myVectorResolute = a.vectorRes(b);
-
-	cout << myVectorResolute.x << " " << myVectorResolute.y << " " << myVectorResolute.z << endl;*/
-
+	cout << endl << endl << "-Vector3 examples-" << endl;
+	cout << "Vector c: " << c.x << ", " << c.y << ", " << c.z << endl;
+	cout << "Magnitude of the unit vector: " << cUnitVector.magnitude() << endl;
 	
+
+	//Binary examples
 	const char* bin = "101010";
-	cout << binToDec(bin) << endl;
+	cout << endl << endl << "-Binary examples-" << endl;
+	cout << "Binary to convert to int: 101010" << endl;
+	cout << "Converted = " << binToDec(bin) << endl << endl;
 
 	char binString[33];
-	decToBin(binString, 33, binToDec(bin));
-	cout << binString << endl;
+	decToBin(binString, 33, 42);
+	cout << "Int to convert to binary: 42" << endl;
+	cout << "Converted = " << binString << endl << endl;
 
 
-	char bitfield = 0;
+	char bitfield = 0;	//Set all the bits to 0
 	setBit(bitfield, 3, true);
 	bool bIsBitTrue = checkBit(bitfield, 3);
-	cout << bIsBitTrue << endl;
+	if (bIsBitTrue)
+		cout << "Bit set and check successful" << endl;
 
-	/*Matrix3 myTest(3, 0, 2, 2, 0, -2, 0, 1, 1);
 
-	cout << "Original Matrix:" << endl;
+	//Matrix3 inverse examples
+	Matrix3 myTest(3, 0, 2, 2, 0, -2, 0, 1, 1);
+
+	cout << endl << endl << "-Matrix3 examples-" << endl;
+	cout << "Original Matrix =" << endl;
 	for (int i = 0; i < 3; ++i)
 	{
 		for (int j = 0; j < 3; ++j)
@@ -66,7 +74,7 @@ int main()
 
 	Matrix3 myInvTest = myTest.Inverse();
 
-	cout << "Inverse Matrix:" << endl;
+	cout << "Inverse Matrix =" << endl;
 	for (int i = 0; i < 3; ++i)
 	{
 		for (int j = 0; j < 3; ++j)
@@ -79,7 +87,7 @@ int main()
 
 	Matrix3 myIdentTest = myTest * myInvTest;
 
-	cout << "Original Matrix * Inverse Matrix:" << endl;
+	cout << "Original Matrix * Inverse Matrix =" << endl;
 	for (int i = 0; i < 3; ++i)
 	{
 		for (int j = 0; j < 3; ++j)
@@ -88,7 +96,7 @@ int main()
 		}
 		cout << endl;
 	}
-	cout << endl;*/
+	cout << endl;
 
 
 	system("pause");

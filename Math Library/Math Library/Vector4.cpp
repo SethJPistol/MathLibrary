@@ -6,6 +6,7 @@ Vector4::Vector4()
 	x = 0.0f;
 	y = 0.0f;
 	z = 0.0f;
+	w = 1;
 }
 
 Vector4::Vector4(float xpos, float ypos, float zpos, float wpos)
@@ -19,13 +20,6 @@ Vector4::Vector4(float xpos, float ypos, float zpos, float wpos)
 Vector4::~Vector4()
 {
 }
-
-//Vector4::Vector4(Vector4& originalVector)
-//{
-//	x = originalVector.x;
-//	y = originalVector.y;
-//	z = originalVector.z;
-//}
 
 
 Vector4 Vector4::operator+(const Vector4& vToAdd)

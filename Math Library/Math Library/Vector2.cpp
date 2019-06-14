@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Vector2.h"
 
 Vector2::Vector2()
@@ -16,12 +15,6 @@ Vector2::Vector2(float xpos, float ypos)
 Vector2::~Vector2()
 {
 }
-
-//Vector2::Vector2(Vector2& originalVector)
-//{
-//	x = originalVector.x;
-//	y = originalVector.y;
-//}
 
 
 Vector2 Vector2::operator+(const Vector2& vToAdd)

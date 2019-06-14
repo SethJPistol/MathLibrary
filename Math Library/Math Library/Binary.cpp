@@ -5,9 +5,9 @@ int binToDec(const char* binaryString)
 	int nBits = strlen(binaryString);			//Store how many binary digits in the binary string
 	int nResult = 0;
 
-	for (int i = 0; i < nBits; ++i)				//Until the end of the string
+	for (int i = 0; i < nBits; ++i)				//Until the end of the string,
 	{
-		if (binaryString[nBits - i - 1] == 49)	//If the char at the index is 1
+		if (binaryString[nBits - i - 1] == 49)	//If the char at the index is 1,
 		{
 			nResult |= (1 << i);				//Change the corresponding bit of the int to 1
 		}
@@ -17,8 +17,8 @@ int binToDec(const char* binaryString)
 
 void decToBin(char* binaryString, int len, int value)
 {
-	assert(len >= 33);
-	char szReverseString[33];					//Character array storing up to a 32-bit binary string
+	assert(len >= 33);							//Make sure the size of the string is over 33
+	char szReverseString[33];					//Character array storing up to a 32-bit binary string and a null terminator
 	int i = 0;									//Iterator for the loop
 	while (value > 1)							//Repeat until 0 or 1
 	{

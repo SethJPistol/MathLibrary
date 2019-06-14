@@ -17,7 +17,6 @@ public:
 	Vector4();													//Default constructor
 	Vector4(float xpos, float ypos, float zpos, float wpos = 1);//Constructor with parameters
 	~Vector4();													//Destructor
-	//Vector4(Vector4& originalVector);							//Copy Constructor
 
 	Vector4 operator+(const Vector4& vToAdd);					//Overload to add two vectors and return a new vector
 	void operator+=(const Vector4& vToAdd);						//Overload to add a vector and reassign

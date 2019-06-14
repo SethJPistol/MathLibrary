@@ -15,7 +15,6 @@ public:
 	Vector2();									//Default constructor
 	Vector2(float xpos, float ypos);			//Constructor with parameters
 	~Vector2();									//Destructor
-	//Vector2(Vector2& originalVector);			//Copy Constructor
 	
 	Vector2 operator+(const Vector2& vToAdd);	//Overload to add two vectors and return a new vector
 	void operator+=(const Vector2& vToAdd);		//Overload to add a vector and reassign
